@@ -1,18 +1,18 @@
-# File: comp1004.sh
+# File: gn-sync.sh
 # Programmer: A Humphreys
-# Created: 21 September 2016
-# Description: Unit COMP1004 Sync to dropbox script
-# Modified: 21 September 2016
+# Created: 6 October 2016
+# Description: Automation script for geeknote 2-way sync
+# Modified: 6 October 2016
 
-CHOICE="$1"
+NOTEBOOK="$1"
 
-if [ $CHOICE = upload ]
+if [ $NOTEBOOK = upload ]
 
 	then
 		# Upload Command
 		~/Downloads/Dropbox-Uploader/dropbox_uploader.sh -p -h upload ~/COMP1004 /
 
-	elif [ $CHOICE = download ]
+	elif [ $NOTEBOOK = download ]
 	then
 		# Download Command
 		rm -r ~/COMP1004
