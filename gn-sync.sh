@@ -6,20 +6,20 @@
 
 NOTEBOOK="$1"
 
-if [ $NOTEBOOK = upload ]
+if [ $NOTEBOOK = labcode ]
 
 	then
-		# Upload Command
-		~/Downloads/Dropbox-Uploader/dropbox_uploader.sh -p -h upload ~/COMP1004 /
+		# Syncing ~/COMP1004/lab-code with COMP1004-code notebook
+		gnsync --path ~/COMP1004/lab-code/ --logpath ~/.log/geeknote.log --format markdown --notebook "COMP1004-code" --two-way TWO_WAY
 
-	elif [ $NOTEBOOK = download ]
-	then
+	# elif [ $NOTEBOOK = download ]
+	# then
 		# Download Command
-		rm -r ~/COMP1004
-		~/Downloads/Dropbox-Uploader/dropbox_uploader.sh -p -h download /COMP1004 ~/
+	#	rm -r ~/COMP1004
+	#	~/Downloads/Dropbox-Uploader/dropbox_uploader.sh -p -h download /COMP1004 ~/
 
 	else
-		printf "(Incorrect option)"
+		printf "Incorrect option\n"
 	exit 1
 
 fi
